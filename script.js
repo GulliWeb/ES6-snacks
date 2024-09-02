@@ -42,6 +42,23 @@ people.map(person =>{
     person.age >= 18 ? console.log(`${person.name} ${person.lastName} avendo ${person.age} anni ed essendo MAGGIORENNE può guidare!`) : console.log(`${person.name} ${person.lastName} avendo ${person.age} anni ed essendo MINORENNE non può guidare!`)
 })
 
+// SNACK 4
+// Creo un array di oggetti che rappresentano libri. Ogni libro avrà proprietà titolo, autore e pagine. creare un nuovo array contenente solo i libri che hanno più di 300 pagine. Creare poi un array di stringhe che descrivono ogni libro nel formato "Il libro [titolo] è stato scritto da [autore]. trova poi il libro con il maggiore numero di pagine utilizzando reduce."
 
+// Creo l'array di oggetti 
+const boooks = [
+    { title: 'I segreti del reame', author: 'James kollins', pages: 181 },
+    { title: 'Athomics habits', author: 'Peter robbins', pages: 241 },
+    { title: 'I segreti del pensiero', author: 'Arthut Fizz', pages: 91 }, 
+    { title: 'La telenovela di pablito', author: 'Pablito jr', pages: 431 },
+    { title: 'universo nel vuoto', author: 'Michel collins', pages: 982 },
+    { title: 'Come funziona un automobile?', author: 'James kollins', pages: 121 },
+    { title: 'Cristiano Ronaldo, la biografia', author: 'Jorge mendes', pages: 321 },
+    { title: 'Gli animali come compagni di vita', author: 'Martina Smithz', pages: 411 }, 
+    { title: 'The bible', author: 'Gli Apostoli', pages: 1600 } 
+]
+
+// Creo l'array di oggetti contente solo quelli con 300 + pagine.
+boooks.filter(book => book.pages >= 300 ? console.table(`Il libro "${book.title.toUpperCase()}", scritto da "${book.author}" ha più di 300 pagine. (${book.pages})`) : null)
 
 
