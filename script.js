@@ -98,3 +98,11 @@ const studentAvg7 = students.filter(student => student.media >= 7)
 studentAvg7.forEach(student => {
     console.log(`La media voti di ${student.name} è di ${student.media}`)
 })
+
+// Usa la destrutturazione per estrarre nome, cognome, e media voti di ogni studente in un nuovo array di oggetti.
+const stad = students.map(({ name, lastName, media }) => ({
+    name,
+    lastName,
+    media
+}))
+console.table(stad)
