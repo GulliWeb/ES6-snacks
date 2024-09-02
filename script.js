@@ -59,6 +59,6 @@ const boooks = [
 ]
 
 // Creo l'array di oggetti contente solo quelli con 300 + pagine.
-boooks.filter(book => book.pages >= 300 ? console.table(`Il libro "${book.title.toUpperCase()}", scritto da "${book.author}" ha più di 300 pagine. (${book.pages})`) : null)
-
+const books300Pages = boooks.filter(book => book.pages > 300);
+console.log(books300Pages)
 
