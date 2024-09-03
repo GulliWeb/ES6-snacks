@@ -148,6 +148,86 @@ console.log('Auto con l\'anno di produzione più basso:', oldestCar);
    •	Obiettivo:
    •	Usa .filter() per creare un array di prodotti che appartengono a una determinata categoria (ad esempio “elettronica”).
    •	Usa .map() per creare un nuovo array che contiene i nomi dei prodotti e il loro prezzo.
-   •	Usa .reduce() per calcolare il valore totale dell’inventario.
 */
 
+// Creo array di oggetti PRODOTTI
+const products = [
+    {name: 'Maglione', category: 'dresses', qta: 1872, price: 27.99},
+    {name: 'Computer', category: 'technology', qta: 62, price: 2099.99},
+    {name: 'hat', category: 'dresses', qta: 19212, price: 7.99},
+    {name: 'belt', category: 'dresses', qta: 674, price: 15.99},
+    {name: 'balls', category: 'sport&hobby', qta: 12872, price: 9.99},
+]
+
+// Creo un array di solo prodotti appartenenti alla categortia DRESSES 
+const dresses = products.filter(product => product.category == 'dresses')
+console.table(dresses)
+
+// Creo un nuovo array che contenga solo i nomi dei prodotti con il loro relativo prezzo
+const infoProducts = products.map(( {name, price} ) => ({
+    name,
+    price,
+}))
+console.table(infoProducts)
+
+// 1.	Descrizione: Crea un array di oggetti che rappresentano libri in una biblioteca. Ogni libro avrà proprietà come titolo, autore, numero di pagine, e anno di pubblicazione.
+// 	2.	Obiettivo:
+// 	•	Usa .filter() per creare un array di libri con meno di 300 pagine.
+// 	•	Usa .map() per creare un nuovo array contenente solo i titoli dei libri e l’anno di pubblicazione.
+// 	•	Trova il libro più vecchio (con l’anno di pubblicazione più basso).
+
+// SNACK 2: Filtra, Mappa e Trova lo Studente con il Punteggio Più Alto
+
+// 	1.	Descrizione: Crea un array di oggetti che rappresentano studenti in una classe. Ogni studente avrà proprietà come nome, cognome, età, e punteggio finale.
+// 	2.	Obiettivo:
+// 	•	Usa .filter() per creare un array di studenti con un punteggio finale superiore a 80.
+// 	•	Usa .map() per creare un nuovo array contenente solo i nomi degli studenti e i loro punteggi.
+// 	•	Trova lo studente con il punteggio finale più alto.
+
+// SNACK 3: Filtra, Mappa e Trova la Città con la Popolazione Più Alta
+
+// 	1.	Descrizione: Crea un array di oggetti che rappresentano città. Ogni città avrà proprietà come nome, popolazione, area (in km²), e nazione.
+// 	2.	Obiettivo:
+// 	•	Usa .filter() per creare un array di città con una popolazione inferiore a 1 milione di abitanti.
+// 	•	Usa .map() per creare un nuovo array contenente solo i nomi delle città e la loro popolazione.
+// 	•	Trova la città con la popolazione più alta.
+
+// SNACK 4: Filtra, Mappa e Trova il Film con il Maggior Incasso
+
+// 	1.	Descrizione: Crea un array di oggetti che rappresentano film. Ogni film avrà proprietà come titolo, regista, anno di uscita, e incasso al botteghino (in milioni di euro).
+// 	2.	Obiettivo:
+// 	•	Usa .filter() per creare un array di film usciti dopo l’anno 2000.
+// 	•	Usa .map() per creare un nuovo array contenente solo i titoli dei film e i loro incassi.
+// 	•	Trova il film con il maggior incasso.
+
+// SNACK 5: Filtra, Mappa e Trova il Giocatore più Anziano
+
+// 	1.	Descrizione: Crea un array di oggetti che rappresentano giocatori di una squadra di calcio. Ogni giocatore avrà proprietà come nome, ruolo, età, e numero di gol segnati.
+// 	2.	Obiettivo:
+// 	•	Usa .filter() per creare un array di giocatori con più di 10 gol segnati.
+// 	•	Usa .map() per creare un nuovo array contenente solo i nomi dei giocatori e i loro ruoli.
+// 	•	Trova il giocatore più anziano.
+
+// SNACK 6: Filtra, Mappa e Trova il Prodotto più Costoso
+
+// 	1.	Descrizione: Crea un array di oggetti che rappresentano prodotti in un negozio. Ogni prodotto avrà proprietà come nome, categoria, prezzo, e quantità in magazzino.
+// 	2.	Obiettivo:
+// 	•	Usa .filter() per creare un array di prodotti con un prezzo inferiore a 50 euro.
+// 	•	Usa .map() per creare un nuovo array contenente solo i nomi dei prodotti e i loro prezzi.
+// 	•	Trova il prodotto più costoso.
+
+// SNACK 7: Filtra, Mappa e Trova il Gadget con la Batteria Più Duratura
+
+// 	1.	Descrizione: Crea un array di oggetti che rappresentano gadget elettronici. Ogni gadget avrà proprietà come nome, tipo, durata della batteria (in ore), e prezzo.
+// 	2.	Obiettivo:
+// 	•	Usa .filter() per creare un array di gadget con una durata della batteria superiore a 10 ore.
+// 	•	Usa .map() per creare un nuovo array contenente solo i nomi dei gadget e la loro durata della batteria.
+// 	•	Trova il gadget con la batteria più duratura.
+
+// SNACK 8: Filtra, Mappa e Trova il Più Giovane Musicista
+
+// 	1.	Descrizione: Crea un array di oggetti che rappresentano musicisti. Ogni musicista avrà proprietà come nome, strumento suonato, età, e numero di album pubblicati.
+// 	2.	Obiettivo:
+// 	•	Usa .filter() per creare un array di musicisti con meno di 30 anni.
+// 	•	Usa .map() per creare un nuovo array contenente solo i nomi dei musicisti e i loro strumenti.
+// 	•	Trova il musicista più giovane.
