@@ -106,3 +106,48 @@ const stad = students.map(({ name, lastName, media }) => ({
     media
 }))
 console.table(stad)
+
+// SNACK BONUS (6)
+/*	•	Descrizione: Crea un array di oggetti che rappresentano auto in un concessionario. Ogni auto avrà proprietà come marca, modello, chilometri, e anno.
+	•	Obiettivo:
+	•	Usa .filter() per creare un array di auto che hanno meno di 50.000 chilometri.
+	•	Usa .map() per creare un nuovo array contenente solo i modelli delle auto e il loro anno di produzione.
+	•	Trova l’auto più vecchia (con l’anno di produzione più basso).
+*/
+
+// Creo l'array di oggetti AUTO
+const cars = [
+    {brand: 'Ferrari', model: 'F570 pista', km: 12000, year: 2015},
+    {brand: 'Audi', model: 'RS3', km: 2000, year: 2023},
+    {brand: 'Bmw', model: 'M2 competition', km: 64000, year: 2019}
+]
+
+// Creo array di auto con meno di 50000 km
+const carsKm50 = cars.filter(car => car.km <= 50000)
+console.table(carsKm50)
+
+// Creo un nuovo array contenente solo il modello e anno dell'auto
+const carsInfo = cars.map(({model, year})=> ({
+  model,
+  year,
+}))
+console.table(carsInfo)
+
+// Trovo l'auto con l'anno di produzione più basso
+let oldestCar = cars[0]
+
+for (let i = 1; i < cars.length; i++) {
+    if (cars[i].year < oldestCar.year) {
+        oldestCar = cars[i]
+    }    
+}
+console.log('Auto con l\'anno di produzione più basso:', oldestCar);
+
+// SNACK BONUS (7)
+/* •	Descrizione: Crea un array di oggetti che rappresentano prodotti in un magazzino. Ogni prodotto avrà proprietà come nome, categoria, quantità, e prezzo.
+   •	Obiettivo:
+   •	Usa .filter() per creare un array di prodotti che appartengono a una determinata categoria (ad esempio “elettronica”).
+   •	Usa .map() per creare un nuovo array che contiene i nomi dei prodotti e il loro prezzo.
+   •	Usa .reduce() per calcolare il valore totale dell’inventario.
+*/
+
