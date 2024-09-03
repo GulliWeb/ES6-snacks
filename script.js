@@ -170,27 +170,52 @@ const infoProducts = products.map(( {name, price} ) => ({
 }))
 console.table(infoProducts)
 
-// 1.	Descrizione: Crea un array di oggetti che rappresentano libri in una biblioteca. Ogni libro avrà proprietà come titolo, autore, numero di pagine, e anno di pubblicazione.
-// 	2.	Obiettivo:
-// 	•	Usa .filter() per creare un array di libri con meno di 300 pagine.
-// 	•	Usa .map() per creare un nuovo array contenente solo i titoli dei libri e l’anno di pubblicazione.
-// 	•	Trova il libro più vecchio (con l’anno di pubblicazione più basso).
-
-// SNACK 2: Filtra, Mappa e Trova lo Studente con il Punteggio Più Alto
-
-// 	1.	Descrizione: Crea un array di oggetti che rappresentano studenti in una classe. Ogni studente avrà proprietà come nome, cognome, età, e punteggio finale.
-// 	2.	Obiettivo:
-// 	•	Usa .filter() per creare un array di studenti con un punteggio finale superiore a 80.
-// 	•	Usa .map() per creare un nuovo array contenente solo i nomi degli studenti e i loro punteggi.
-// 	•	Trova lo studente con il punteggio finale più alto.
-
-// SNACK 3: Filtra, Mappa e Trova la Città con la Popolazione Più Alta
-
+// SNACK BONUS (8) Filtra, Mappa e Trova la Città con la Popolazione Più Alta
 // 	1.	Descrizione: Crea un array di oggetti che rappresentano città. Ogni città avrà proprietà come nome, popolazione, area (in km²), e nazione.
 // 	2.	Obiettivo:
 // 	•	Usa .filter() per creare un array di città con una popolazione inferiore a 1 milione di abitanti.
 // 	•	Usa .map() per creare un nuovo array contenente solo i nomi delle città e la loro popolazione.
 // 	•	Trova la città con la popolazione più alta.
+
+// Creo array di oggetti CITTA
+const cities = [
+    {name: 'Bra', popolation: 29000, area: 2321, nation: 'Italy'},
+    {name: 'Torino', popolation: 300000, area: 98212, nation: 'Italy'},
+    {name: 'Los Angeles', popolation: 2190000, area: 832131, nation: 'USA'}
+]
+
+// Creo un array di città contenenti solo le città con meno di 1MLN di abitanti
+const oneMlnLower = cities.filter(city => city.popolation <= 1000000)
+console.table(oneMlnLower)
+
+// Creo un array contente solo i nomi delle città e la loro relativa popolazione
+const cityInfo = cities.map(( {name, popolation} ) => ({
+    name,
+    popolation,
+}))
+console.table(cityInfo)
+
+// Trovo la città con la popolazione più alta
+let cityName = cities[0].name
+let lowerPopulation = cities[0].popolation
+for (let i = 0; i < cities.length; i++) {
+    if (cities[i].popolation > lowerPopulation) {
+        cityName = cities[i].name
+        lowerPopulation = cities[i].popolation
+        
+    }
+}
+console.log(`La città con più abitanti è ${cityName} con ${lowerPopulation} abitanti.`)
+
+
+
+
+
+
+
+
+
+
 
 // SNACK 4: Filtra, Mappa e Trova il Film con il Maggior Incasso
 
