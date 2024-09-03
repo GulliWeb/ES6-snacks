@@ -207,52 +207,38 @@ for (let i = 0; i < cities.length; i++) {
 }
 console.log(`La città con più abitanti è ${cityName} con ${lowerPopulation} abitanti.`)
 
-
-
-
-
-
-
-
-
-
-
-// SNACK 4: Filtra, Mappa e Trova il Film con il Maggior Incasso
-
+// SNACK BONUS (9) Filtra, Mappa e Trova il Film con il Maggior Incasso
 // 	1.	Descrizione: Crea un array di oggetti che rappresentano film. Ogni film avrà proprietà come titolo, regista, anno di uscita, e incasso al botteghino (in milioni di euro).
 // 	2.	Obiettivo:
 // 	•	Usa .filter() per creare un array di film usciti dopo l’anno 2000.
 // 	•	Usa .map() per creare un nuovo array contenente solo i titoli dei film e i loro incassi.
 // 	•	Trova il film con il maggior incasso.
 
-// SNACK 5: Filtra, Mappa e Trova il Giocatore più Anziano
+//Creo oggetti FILM
+const movies = [
+        { title: 'Inception', director: 'Christopher Nolan', year: 2010, boxOffice: 836.8 },
+        { title: 'The Matrix', director: 'The Wachowskis', year: 1999, boxOffice: 466.5 },
+        { title: 'Avatar', director: 'James Cameron', year: 2009, boxOffice: 2787.9 },
+        { title: 'The Avengers', director: 'Joss Whedon', year: 2012, boxOffice: 1518.8 },
+        { title: 'Titanic', director: 'James Cameron', year: 1997, boxOffice: 2187.5 }
+    ]
 
-// 	1.	Descrizione: Crea un array di oggetti che rappresentano giocatori di una squadra di calcio. Ogni giocatore avrà proprietà come nome, ruolo, età, e numero di gol segnati.
-// 	2.	Obiettivo:
-// 	•	Usa .filter() per creare un array di giocatori con più di 10 gol segnati.
-// 	•	Usa .map() per creare un nuovo array contenente solo i nomi dei giocatori e i loro ruoli.
-// 	•	Trova il giocatore più anziano.
+// Creo un array contenente solo i film usciti dopo l'anno 2000
+const moviesAfter2000 = movies.filter(movie => movie.year >= 2000)
+console.table(moviesAfter2000)
 
-// SNACK 6: Filtra, Mappa e Trova il Prodotto più Costoso
+// Creo un array contenente solo i titoli dei film e i loro incassi
+const infoMovies = movies.map(({title, boxOffice}) => ({
+    title,
+    boxOffice,
+}))
+console.table(infoMovies)
 
-// 	1.	Descrizione: Crea un array di oggetti che rappresentano prodotti in un negozio. Ogni prodotto avrà proprietà come nome, categoria, prezzo, e quantità in magazzino.
-// 	2.	Obiettivo:
-// 	•	Usa .filter() per creare un array di prodotti con un prezzo inferiore a 50 euro.
-// 	•	Usa .map() per creare un nuovo array contenente solo i nomi dei prodotti e i loro prezzi.
-// 	•	Trova il prodotto più costoso.
-
-// SNACK 7: Filtra, Mappa e Trova il Gadget con la Batteria Più Duratura
-
-// 	1.	Descrizione: Crea un array di oggetti che rappresentano gadget elettronici. Ogni gadget avrà proprietà come nome, tipo, durata della batteria (in ore), e prezzo.
-// 	2.	Obiettivo:
-// 	•	Usa .filter() per creare un array di gadget con una durata della batteria superiore a 10 ore.
-// 	•	Usa .map() per creare un nuovo array contenente solo i nomi dei gadget e la loro durata della batteria.
-// 	•	Trova il gadget con la batteria più duratura.
-
-// SNACK 8: Filtra, Mappa e Trova il Più Giovane Musicista
-
-// 	1.	Descrizione: Crea un array di oggetti che rappresentano musicisti. Ogni musicista avrà proprietà come nome, strumento suonato, età, e numero di album pubblicati.
-// 	2.	Obiettivo:
-// 	•	Usa .filter() per creare un array di musicisti con meno di 30 anni.
-// 	•	Usa .map() per creare un nuovo array contenente solo i nomi dei musicisti e i loro strumenti.
-// 	•	Trova il musicista più giovane.
+// Trovo il film con il maggiore incasso
+let maxGained = movies[0].boxOffice
+for (let i = 0; i < movies.length; i++) {
+    if (movies[i].boxOffice > maxGained) {
+        maxGained = movies[i].boxOffice        
+    }
+}
+console.log(maxGained)
